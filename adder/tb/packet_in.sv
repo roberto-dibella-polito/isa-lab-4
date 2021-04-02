@@ -1,3 +1,11 @@
+/******************************************************************************
+** PACKET IN
+** Describes a TRANSACTION class used to transfer data
+**
+** UVM_ALL_ON	-> All the data structures have to be used in all data methods
+** UVM_HEX		-> Represented in hexadecimal
+*******************************************************************************/
+
 class packet_in extends uvm_sequence_item;
     rand integer A;
     rand integer B;
