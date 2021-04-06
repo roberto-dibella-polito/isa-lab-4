@@ -1,33 +1,11 @@
 /**************************************************************************
-	Module DUT declaration
-	- It has an INPUT interface and OUTPUT interface defined into dut_if
-	- It uses THREE states
-	
-	@reset, state = INITIAL
-	At each clock cycle state is evaluated.
-	INITIAL: 	
-		- the READY signal is raised (DUT is ready)
-		- state updated to WAIT
-	WAIT:
-		Waits for new inputs
-		- Prints to the user the values of inputs and the evaluated output
-		- VALID is rised
-		- State is updated to SEND
-	
-	SEND:
-		Used to send values to the test to be compared
-		- VALID is set to zero
-		- DUT is READY again
-		- and it WAITS for new values
-	
-	? two clock cycles to evalate data? -> N.B.: Clock is defined by TOP
-	
+	MBE MULTIPLIER DUT
 ****************************************************************************/ 
 
 module DUT(dut_if.port_in in_inter, dut_if.port_out out_inter, output enum logic [1:0] {INITIAL,WAIT,SEND} state);
     
 	// Device Under Test instatiation
-    adder adder_under_test(.A(in_inter.A),.B(in_inter.B),.OUT(out_inter.data));
+    mbe multiplier_under_test(.A_SIG(in_inter.A),.B_SIG(in_inter.B),.PROD(out_inter.data));
 
     always_ff @(posedge in_inter.clk)
     begin
