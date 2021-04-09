@@ -632,9 +632,9 @@ begin
 	--------------------------------------------------------------
 	--------------------------------------------------------------
 	
-	PARTIAL_1(1 downto 0) <= LV5(0)(1 downto 0);
-	PARTIAL_2(2 downto 0) <= LV5(2)(2) & LV5(1)(1 downto 0);
-	
+	--PARTIAL_1(1 downto 0) <= LV5(0)(1 downto 0);
+	PARTIAL_2(2 downto 0) <= LV5(2)(2) & LV0(1)(1 downto 0);
+	PARTIAL_1(1 downto 0) <= LV0(0)(1 downto 0);
 	
 	HA6_row_1_1: HA port map
 	(	A		=> LV5(0)(2),
