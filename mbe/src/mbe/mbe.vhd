@@ -1,3 +1,10 @@
+--------------------------------------------------------
+-- MBE MULTIPLIER - Modified version
+-- Previous version was working, but it was wrong!
+--------------------------------------------------------
+
+
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -115,16 +122,18 @@ begin
 	-- pj is DIRECT or COMPLEMENTED depending on the value of b(2j+1), 
 	-- to have the 2's complement the addition of b(2j+1) to the LSB is needed
 	
-	p0_extended <= not(pj(0)(32)) & pj(0)(32) & pj(0)(32) & pj(0);
+	-- Extension NOT with Pj, but with b(2j+1)!
+	
+	p0_extended <= not(bin(0)(2)) & bin(0)(2) & bin(0)(2) & pj(0);
 
 	pj_ext_gen: for i in 1 to 14 generate
 		
-		pj_extended(i) <= '1' & not(pj(i)(32)) & pj(i) & '0' & pj(i-1)(32);
+		pj_extended(i) <= '1' & not(bin(i)(2)) & pj(i) & '0' & bin(i-1)(2);
 		
 	end generate;
 	
-	p15_extended <= not(pj(15)(32)) & pj(15) & '0' & pj(14)(32);
-	p16_extended <= pj(16)(31 downto 0) & '0' & pj(15)(32);	
+	p15_extended <= not(bin(15)(2)) & pj(15) & '0' & bin(14)(2);
+	p16_extended <= pj(16)(31 downto 0) & '0' & bin(15)(2);	
 	
 	-- Dadda Tree
 	tree: dadda port map
