@@ -375,13 +375,13 @@ begin
 	LV2(7)(52 downto 45) <= LV1(7)(52)			 & LV1(6)(51) & LV1(7)(50) & LV1(7)(49) & LV1(8)(48) & LV1(8)(47) & LV1(9)(46) & LV1(9)(45); 
 	
 	-- Lower bits
-	LV2(0)(15 downto 0)  <= LV1(0)(15 downto 0);
-	LV2(1)(16 downto 0)  <= LV1(2)(16) & LV1(1)(15 downto 0);
-	LV2(2)(17 downto 2)  <= LV1(3)(17) & LV1(3)(16) & LV1(2)(15 downto 2);
-	LV2(3)(18 downto 4)  <= LV1(5)(18) & LV1(4)(17) & LV1(4)(16) & LV1(3)(15 downto 4);
-	LV2(4)(19 downto 6)  <= LV1(6)(19) & LV1(6)(18) & LV1(5)(17) & LV1(5)(16) & LV1(4)(15 downto 6);
-	LV2(5)(20 downto 8)  <= LV1(8)(20) & LV1(7)(19) & LV1(7)(18) & LV1(6)(17) & LV1(6)(16) & LV1(5)(15 downto 8);
-	LV2(6)(21 downto 10) <= LV1(9)(21) & LV1(9)(20) & LV1(8)(19) & LV1(8)(18) & LV1(7)(17) & LV1(7)(16) & LV1(6)(15 downto 10);
+	LV2(0)(15 downto 0)  <= 																							  LV1(0)(15 downto 0);
+	LV2(1)(16 downto 0)  <= 																				 LV1(2)(16) & LV1(1)(15 downto 0);
+	LV2(2)(17 downto 2)  <= 																	LV1(3)(17) & LV1(3)(16) & LV1(2)(15 downto 2);
+	LV2(3)(18 downto 4)  <= 													   LV1(5)(18) & LV1(4)(17) & LV1(4)(16) & LV1(3)(15 downto 4);
+	LV2(4)(19 downto 6)  <= 										  LV1(6)(19) & LV1(6)(18) & LV1(5)(17) & LV1(5)(16) & LV1(4)(15 downto 6);
+	LV2(5)(20 downto 8)  <= 			  				LV1(8)(20)  & LV1(7)(19) & LV1(7)(18) & LV1(6)(17) & LV1(6)(16) & LV1(5)(15 downto 8);
+	LV2(6)(21 downto 10) <= 			  LV1(9)(21)  & LV1(9)(20)  & LV1(8)(19) & LV1(8)(18) & LV1(7)(17) & LV1(7)(16) & LV1(6)(15 downto 10);
 	LV2(7)(22 downto 12) <= LV1(11)(22) & LV1(10)(21) & LV1(10)(20) & LV1(9)(19) & LV1(9)(18) & LV1(8)(17) & LV1(8)(16) & LV1(7)(15 downto 12);
 	
 	-- Last row
@@ -487,15 +487,15 @@ begin
 	LV3(1)(63 downto 57) <= LV2(1)(63 downto 58) & LV2(0)(57);
 	LV3(2)(62 downto 56) <= LV2(2)(62 downto 58) & LV2(1)(57) & LV2(2)(56); 
 	LV3(3)(60 downto 55) <= LV2(3)(60 downto 58) & LV2(2)(57) & LV2(3)(56) & LV2(3)(55);
-	LV3(4)(58 downto 54) <= LV2(4)(58) & LV2(3)(57) & LV2(4)(56) & LV2(4)(55) & LV2(5)(54);
-	LV3(5)(57 downto 53) <= LV2(4)(57) & LV2(5)(56) & LV2(5)(55) & LV2(6)(54) & LV2(6)(53);   
+	LV3(4)(58 downto 54) <= LV2(4)(58) 			 & LV2(3)(57) & LV2(4)(56) & LV2(4)(55) & LV2(5)(54);
+	LV3(5)(57 downto 53) <= 					   LV2(4)(57) & LV2(5)(56) & LV2(5)(55) & LV2(6)(54) & LV2(6)(53);   
 	
 	-- Lower bits
-	LV3(0)(9 downto 0)  <= LV2(0)(9 downto 0);
-	LV3(1)(10 downto 0) <= LV2(2)(10) & LV2(1)(9 downto 0);
-	LV3(2)(11 downto 2) <= LV2(3)(11) & LV2(3)(10) & LV2(2)(9 downto 2);
-	LV3(3)(12 downto 4) <= LV2(5)(12) & LV2(4)(11) & LV2(4)(10) & LV2(3)(9 downto 4);
-	LV3(4)(13 downto 6) <= LV2(6)(13) & LV2(6)(12) & LV2(5)(11) & LV2(5)(10) & LV2(4)(9 downto 6);
+	LV3(0)(9 downto 0)  <= 																	LV2(0)(9 downto 0);
+	LV3(1)(10 downto 0) <= 													   LV2(2)(10) & LV2(1)(9 downto 0);
+	LV3(2)(11 downto 2) <= 										  LV2(3)(11) & LV2(3)(10) & LV2(2)(9 downto 2);
+	LV3(3)(12 downto 4) <= 							 LV2(5)(12) & LV2(4)(11) & LV2(4)(10) & LV2(3)(9 downto 4);
+	LV3(4)(13 downto 6) <= 				LV2(6)(13) & LV2(6)(12) & LV2(5)(11) & LV2(5)(10) & LV2(4)(9 downto 6);
 	LV3(5)(14 downto 8) <= LV2(8)(14) & LV2(7)(13) & LV2(7)(12) & LV2(6)(11) & LV2(6)(10) & LV2(5)(9 downto 8);
 	
 	--------------------------------------------------------------
@@ -569,13 +569,13 @@ begin
 	-- Higher bits
 	LV4(0)(63 downto 62) <= LV3(0)(63 downto 62);
 	LV4(1)(63 downto 61) <= LV3(1)(63 downto 62) & LV3(0)(61);
-	LV4(2)(62 downto 60) <= LV3(2)(62) & LV3(1)(61) & LV3(2)(60); 
-	LV4(3)(61 downto 59) <= LV3(2)(61) & LV3(3)(60) & LV3(3)(59);
+	LV4(2)(62 downto 60) <= LV3(2)(62) 			 & LV3(1)(61) & LV3(2)(60); 
+	LV4(3)(61 downto 59) <= 					   LV3(2)(61) & LV3(3)(60) & LV3(3)(59);
 	
 	-- Lower bits
-	LV4(0)(5 downto 0) <= LV3(0)(5 downto 0);
-	LV4(1)(6 downto 0) <= LV3(2)(6) & LV3(1)(5 downto 0);
-	LV4(2)(7 downto 2) <= LV3(3)(7) & LV3(3)(6) & LV3(2)(5 downto 2);
+	LV4(0)(5 downto 0) <= 									  LV3(0)(5 downto 0);
+	LV4(1)(6 downto 0) <= 						  LV3(2)(6) & LV3(1)(5 downto 0);
+	LV4(2)(7 downto 2) <= 			  LV3(3)(7) & LV3(3)(6) & LV3(2)(5 downto 2);
 	LV4(3)(8 downto 4) <= LV3(5)(8) & LV3(4)(7) & LV3(4)(6) & LV3(3)(5 downto 4);
 
 	--------------------------------------------------------------
@@ -635,8 +635,9 @@ begin
 	--------------------------------------------------------------
 	
 	--PARTIAL_1(1 downto 0) <= LV5(0)(1 downto 0);
-	PARTIAL_2(2 downto 0) <= LV5(2)(2) & LV0(1)(1 downto 0);
 	PARTIAL_1(1 downto 0) <= LV0(0)(1 downto 0);
+	PARTIAL_2(2 downto 0) <= LV5(2)(2) & LV0(1)(1 downto 0);
+	
 	
 	HA6_row_1_1: HA port map
 	(	A		=> LV5(0)(2),
