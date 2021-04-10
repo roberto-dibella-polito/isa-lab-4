@@ -1,5 +1,3 @@
-rm -r work
-vlib work
 vcom -93 -work ./work ../src/mbe/ha.vhd
 vcom -93 -work ./work ../src/mbe/fa.vhd
 vcom -93 -work ./work ../src/mbe/dadda.vhd

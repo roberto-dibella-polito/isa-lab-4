@@ -70,7 +70,7 @@ begin
 
 		if 		b_in = "000" or b_in = "111" then qj <= (others=>'0');
 		elsif 	b_in = "011" or b_in = "100" then qj <= A_SIG & '0';
-		else		qj <= A_SIG(31) & A_SIG;		
+		else		qj <= '0' & A_SIG;		
 		end if;
 
 	end process;

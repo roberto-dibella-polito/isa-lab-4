@@ -93,7 +93,7 @@ begin
 	bin(13) <= B_SIG(27) & B_SIG(26) & B_SIG(25);
 	bin(14) <= B_SIG(29) & B_SIG(28) & B_SIG(27);
 	bin(15) <= B_SIG(31) & B_SIG(30) & B_SIG(29);
-	bin(16) <= B_SIG(31) & B_SIG(31) & B_SIG(31);
+	bin(16) <= "00" & B_SIG(31);
 
 
 	
