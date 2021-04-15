@@ -37,7 +37,7 @@ module top;
   
   always #5 clk = !clk;
   
-  logic [2:0] state;
+  logic [3:0] state;
   
   dut_if in(clk, rst);
   dut_if out(clk, rst);

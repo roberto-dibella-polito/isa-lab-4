@@ -9,6 +9,9 @@ class refmod extends uvm_component;
     packet_out tr_out;
     uvm_get_port #(packet_in) in;
     uvm_put_port #(packet_out) out;
+
+	shortreal fp_A, fp_B;
+	real fp_data;
     
     function new(string name = "refmod", uvm_component parent);
         super.new(name, parent);
@@ -26,8 +29,14 @@ class refmod extends uvm_component;
         
         forever begin
             in.get(tr_in);
-            tr_out.data = tr_in.A * tr_in.B;
-            $display("refmod: input A = %d, input B = %d, output OUT = %d",tr_in.A, tr_in.B, tr_out.data);
+			
+			fp_A = $bitstoshortreal(tr_in.A);
+			fp_B = $bitstoshortreal(tr_in.B);
+			fp_data = fp_A * fp_B;			
+			tr_out.data = $shortrealtobits(fp_data);		
+            //tr_out.data = tr_in.A * tr_in.B;
+
+            $display("refmod: input A = %0.40f, input B = %0.40f, output OUT = %0.40f",fp_A, fp_B, fp_data);
 			$display("refmod: input A = %b, input B = %b, output OUT = %b",tr_in.A, tr_in.B, tr_out.data);
             out.put(tr_out);
         end

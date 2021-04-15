@@ -39,4 +39,4 @@ sim:/top/FPmul/fpmul_under_test/I4/FP_Z \
 sim:/top/FPmul/out_inter/valid \
 
 
-run 100 ns
+run 80500 ns
