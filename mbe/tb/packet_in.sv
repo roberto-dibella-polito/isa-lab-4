@@ -7,12 +7,12 @@
 *******************************************************************************/
 
 class packet_in extends uvm_sequence_item;
-    rand integer A;
-    rand integer B;
+    rand integer unsigned A;
+    rand integer unsigned B;
 
 	//constraint my_range { A < 1000; A > 100; B < A/10; }
 	
-	constraint my_range { A inside {[-100:100]}; B inside {[-100:100]}; }
+	//constraint my_range { A inside {[-100:100]}; B inside {[-100:100]}; }
 
 
     `uvm_object_utils_begin(packet_in)
