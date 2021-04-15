@@ -3,8 +3,6 @@
 -- Previous version was working, but it was wrong!
 --------------------------------------------------------
 
-
-
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -99,10 +97,6 @@ begin
 	
 	-- Given each triplet b(2j+1),b(2j),b(2j-1) i have to place on Pj generator
 	partial_products: for i in 0 to 16 generate
-	
-		 --pj_right: if (i rem 2) /= 0 generate
-		
-			--bin(i/2) <= multiplier(i+1) & multiplier(i) & multiplier(i-1);
 			
 			partial: entity work.pj_generator(bhv_2) port map
 			( 
@@ -110,8 +104,7 @@ begin
 				b_in	=> bin(i),
 				pj		=> pj(i)
 			);
-			
-		--end generate;
+
 	end generate;
 
 	

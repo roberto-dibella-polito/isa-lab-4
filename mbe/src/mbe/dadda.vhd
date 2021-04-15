@@ -60,15 +60,6 @@ architecture structure of dadda is
 	signal LV4 : matrix_L4;
 	signal LV5 : matrix_L5;
 	
-	signal L0_R1_i 		: std_logic_vector(42 downto 24);
-	signal L0_R1_i_1	: std_logic_vector(42 downto 24);
-	signal L0_R2_i 		: std_logic_vector(40 downto 26);
-	signal L0_R2_i_1 	: std_logic_vector(40 downto 26);
-	signal L0_R3_i 		: std_logic_vector(38 downto 28);
-	signal L0_R3_i_1 	: std_logic_vector(38 downto 28);
-	signal L0_R4_i 		: std_logic_vector(36 downto 30);
-	signal L0_R4_i_1 	: std_logic_vector(36 downto 30);
-	
 begin
 
 	-- The order of the dots into each column is not important
