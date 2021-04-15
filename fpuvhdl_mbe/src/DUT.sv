@@ -1,15 +1,16 @@
 /**************************************************************************
 	Module DUT declaration
 	- It has an INPUT interface and OUTPUT interface defined into dut_if
-	- It uses THREE states
+	- It uses 9 states
 	
 	@reset, state = INITIAL
 	At each clock cycle state is evaluated.
 	INITIAL: 	
 		- the READY signal is raised (DUT is ready)
 		- state updated to WAIT
-	WAIT_1:
+	WAIT_i:
 		Waits for new inputs
+		Last one:
 		- Prints to the user the values of inputs and the evaluated output
 		- VALID is rised
 		- State is updated to SEND
